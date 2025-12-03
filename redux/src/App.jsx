@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { decreament, increament, increamentByAmount } from './store/reducers/counterSlice';
+import { decreament, increament, increamentByAmount, incrementAsync } from './store/reducers/counterSlice';
 
 const App = () => {
  let {value}= useSelector(state=>state.counter);
@@ -14,7 +14,7 @@ const App = () => {
       <div className="btnContainer">
         <button className='btn' onClick={() => dispatch(increament())}>increament+1</button>
         <button className='btn' onClick={() => dispatch(decreament())}>decreament-1</button>
-        <button className='btn'  onClick={() => dispatch(increamentByAmount(5))}>increamentBy+5</button>
+        <button className='btn'  onClick={() => dispatch(incrementAsync(5))}>increamentBy+5</button>
 
 
       </div>

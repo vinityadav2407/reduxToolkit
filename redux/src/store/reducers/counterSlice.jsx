@@ -22,5 +22,12 @@ export const counterLogic = createSlice({
 })
 
 export const {increament,decreament,increamentByAmount}=counterLogic.actions;
+// we can't perform the Asynchronus operation directly into the Redux 
+// so we first finish the async work (complete the asyc work) then we call the our  Synchronous Action 
+export const incrementAsync=(amount)=>(dispatch)=>{
+    setTimeout(() => {
+       dispatch( increamentByAmount(amount));// now here asyc work done and we call it
+    }, 2000);
+}
 
 export default counterLogic.reducer;
