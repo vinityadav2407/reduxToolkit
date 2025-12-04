@@ -4,7 +4,8 @@ const initialState={    // the name of initialState should be always same otherw
     value:0,
 }
 
-// Bellow is the all the actions or the synchrouns to work on Asynch opertion we need to handle it other way 
+// Bellow is the all the actions or the synchrouns to work on Asynch opertion we need to handle it other way
+// we need to make wrapper actions(a higher order function) 
 export const counterLogic = createSlice({
     name:'counter',
     initialState,
@@ -23,6 +24,7 @@ export const counterLogic = createSlice({
 
 export const {increament,decreament,increamentByAmount}=counterLogic.actions;
 // we can't perform the Asynchronus operation directly into the Redux 
+// we need to make wrapper actions(a higher order function) 
 // so we first finish the async work (complete the asyc work) then we call the our  Synchronous Action 
 export const incrementAsync=(amount)=>(dispatch)=>{
     setTimeout(() => {

@@ -1,0 +1,22 @@
+.app{
+  height: 100%;
+  width: 80%;
+  background-color: rgb(247, 194, 194);
+  margin: 0 auto;
+  text-align: center;
+  padding: 16px 16px;
+}
+.btnContainer{
+margin-top: 12px;
+}
+.btn{
+  
+  margin-left: 12px;
+  padding: 10px 16px;
+  font-size: large;
+  font-weight: 500;
+  border: 2px solid brown;
+  color: brown;
+  border-radius: 15px;
+  /* background-color: rgb(247, 194, 194); */
+} 
