@@ -1,92 +1,39 @@
-import React, { useState } from 'react'
+
 import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
-import CounterComponent from './store/components/CounterComponent'
-
 import UserComponent from './store/components/UserComponet'
-const App = () => {
+import Product from './store/components/Product'
 
-// let [users,setUsers]=useState(
-//   [
-//   {
-//     id: 1,
-//     name: "Amit Sharma",
-//     email: "amit.sharma@example.com",
-//     age: 24,
-//     city: "Delhi"
-//   },
-//   {
-//     id: 2,
-//     name: "Riya Verma",
-//     email: "riya.verma@example.com",
-//     age: 22,
-//     city: "Mumbai"
-//   },
-//   {
-//     id: 3,
-//     name: "Sahil Gupta",
-//     email: "sahil.gupta@example.com",
-//     age: 27,
-//     city: "Bangalore"
-//   },
-//   {
-//     id: 4,
-//     name: "Priya Singh",
-//     email: "priya.singh@example.com",
-//     age: 25,
-//     city: "Pune"
-//   },
-//   {
-//     id: 5,
-//     name: "Rohan Mehta",
-//     email: "rohan.mehta@example.com",
-//     age: 26,
-//     city: "Hyderabad"
-//   },
-//   {
-//     id: 6,
-//     name: "Neha Kumari",
-//     email: "neha.kumari@example.com",
-//     age: 23,
-//     city: "Noida"
-//   },
-//   {
-//     id: 7,
-//     name: "Vikas Yadav",
-//     email: "vikas.yadav@example.com",
-//     age: 28,
-//     city: "Gurgaon"
-//   },
-//   {
-//     id: 8,
-//     name: "Kriti Agarwal",
-//     email: "kriti.agarwal@example.com",
-//     age: 24,
-//     city: "Chennai"
-//   },
-//   {
-//     id: 9,
-//     name: "Deepak Raj",
-//     email: "deepak.raj@example.com",
-//     age: 29,
-//     city: "Kolkata"
-//   },
-//   {
-//     id: 10,
-//     name: "Sneha Pathak",
-//     email: "sneha.pathak@example.com",
-//     age: 21,
-//     city: "Ahmedabad"
-//   }
-// ]
-// )
- const {users}= useSelector(state=>state.userReducer);
+import { Link, Route, Routes } from 'react-router-dom'
+import Home from './store/components/Home'
+
+const App = () => {
  const dispatch=useDispatch();
 
   return (
-    <div className='app'>
-    <h1 className='main-heading'>User List</h1>
-    <UserComponent/>
+    <div  style={{
+      width:'100%',
+      height:'100%',
+      }}>
+           <nav  style={{
+               display:'flex',
+               padding:'12px 20px',
+               gap:'50px',
+               alignItems:'center',
+               justifyContent:'center',
+               background:'lightgrey'
+           }}>
+            
+            <Link to='/'>Home</Link>
+            <Link to='/users'>Users</Link>
+            <Link to='/products'>Producs</Link>
+           </nav>
+        
+            <Routes>
+               <Route path='/' element={<Home/>}/>
+                 <Route path='/users' element={<UserComponent/>}/>
+                <Route path='/products' element={<Product/>}/>
+            </Routes>
     </div>
   )
 }

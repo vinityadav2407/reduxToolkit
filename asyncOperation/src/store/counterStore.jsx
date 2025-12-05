@@ -7,5 +7,6 @@ export const store=configureStore({
     reducer:{ 
         counter:conunterReducer,
         userReducer:userReducer,
+        productReducer:productReducer,
     },
 })
